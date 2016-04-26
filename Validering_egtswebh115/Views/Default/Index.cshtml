@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 @section head
@@ -29,10 +28,10 @@
 }
 <h2>Index</h2>
 
-<form name="myForm" method="POST" onsubmit="return ValiderForm(this);">
-    Navn: <input id="navn" type="text" />
+<form name="myForm" action="/Default/Gem/" method="POST" onsubmit="return ValiderForm(this);">
+    Navn: <input id="navn" name="navn" type="text" />
     <br/>
-    E-mail: <input id="email" type="text" />
+    E-mail: <input id="email" name="email" type="text" />
     <br />
     <input id="Submit1" type="submit" value="Send" />
 
