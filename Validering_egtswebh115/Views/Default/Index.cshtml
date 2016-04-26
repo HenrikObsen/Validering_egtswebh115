@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section head
+{
+    <script src="~/js/ValidationTypes.js"></script>
+
+    <script>
+        function ValiderForm(form) {
+            var valid = true;
+            var navn = form["navn"].value;
+            var email = form["email"].value;
+
+            if (!isRequired(navn)) {
+                valid = false;
+                alert("Du skal skrive dit navn!!!");
+            }
+
+            if (!isEmail(email)) {
+                valid = false;
+                alert("Du skal skrive en gyldig email!!!");
+            }
+
+            return valid;
+        }
+    </script>
+
+}
+<h2>Index</h2>
+
+<form name="myForm" method="POST" onsubmit="return ValiderForm(this);">
+    Navn: <input id="navn" type="text" />
+    <br/>
+    E-mail: <input id="email" type="text" />
+    <br />
+    <input id="Submit1" type="submit" value="Send" />
+
+</form>
+
